@@ -1,0 +1,46 @@
+Project 1: Network Security with Cisco Packet Tracer
+Project Title: Secure Corporate Network Design
+Objective:
+Design a secure corporate network using Cisco Packet Tracer. Implement security measures such as VLANs, ACLs (Access Control Lists), port security, and VPNs to protect against unauthorized access and ensure data integrity.
+
+Steps:
+Network Topology: Design a network topology with multiple departments (e.g., HR, IT, Sales) using switches and routers.
+VLAN Configuration: Segment the network into different VLANs for each department.
+Inter-VLAN Routing: Configure inter-VLAN routing to allow communication between VLANs while applying security controls.
+ACL Implementation: Apply ACLs on routers to control traffic flow between VLANs, allowing only authorized traffic.
+Port Security: Implement port security on switches to prevent unauthorized devices from connecting to the network.
+VPN Setup: Configure a site-to-site VPN to securely connect a remote branch office to the corporate network.
+Testing: Simulate attacks like unauthorized access attempts and test the network's response to these threats.
+
+Adding Projects to GitHub:
+Create a Repository:
+
+Go to GitHub and create a new repository for each project.
+Name them appropriately, e.g., Secure-Corporate-Network and Multi-Layered-Security-Architecture.
+Upload Project Files:
+
+Export your Packet Tracer and GNS3 project files.
+Upload these files to their respective GitHub repositories.
+Include a README.md file for each project, detailing the project's objectives, setup instructions, and key features.
+Version Control:
+
+Commit your changes and push them to the repository.
+Keep your projects updated by committing any changes or improvements you make.
+Including Projects on Your CV:
+Section: Add a "Projects" section to your CV.
+
+Format:
+
+Project Title: Secure Corporate Network Design
+
+Description: Designed a secure corporate network using Cisco Packet Tracer, implementing VLANs, ACLs, port security, and VPNs to protect against unauthorized access and ensure data integrity.
+
+GitHub Link: GitHub Repository
+
+Project Title: Multi-Layered Security Architecture
+
+Description: Developed a multi-layered security architecture using GNS3, implementing firewalls, IDS/IPS, and secure access control to defend against various network threats.
+
+GitHub Link: GitHub Repository
+
+Ensure your GitHub repositories are public and well-documented for potential employers to review your work.

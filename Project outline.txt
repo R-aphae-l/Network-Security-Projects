@@ -1,0 +1,125 @@
+### **Step-by-Step Guide for Project 1: Secure Corporate Network Design**
+
+---
+
+### **Phase 1: Planning and Initial Setup**
+
+#### **Step 1: Define Project Scope**
+- **Objective:** Design a secure corporate network using Cisco Packet Tracer, focusing on VLANs, ACLs, port security, and VPNs.
+- **Network Requirements:**
+  - Departments: HR, IT, Sales.
+  - Devices: PCs, switches, routers, and servers.
+  - Security Measures: VLAN segmentation, ACLs, port security, and VPN for remote access.
+
+#### **Step 2: Setup Cisco Packet Tracer**
+- **Download & Install:** Ensure you have Cisco Packet Tracer installed on your system.
+- **Create a New Project:** Open Cisco Packet Tracer and create a new project file.
+
+### **Phase 2: Network Design and Implementation**
+
+#### **Step 3: Design the Network Topology**
+- **Add Devices:**
+  - Drag and drop switches, routers, PCs, and servers into the workspace.
+  - Connect the devices using appropriate cables (copper straight-through for different devices, copper crossover for similar devices).
+- **Label Devices:**
+  - Name the devices according to their role, e.g., HR-PC1, IT-Switch, Sales-Router.
+
+#### **Step 4: Configure VLANs**
+- **Create VLANs:**
+  - Access each switch's CLI and create VLANs for HR, IT, and Sales.
+  - Example Command: `Switch(config)# vlan 10` (For HR).
+- **Assign Ports to VLANs:**
+  - Assign switch ports to the corresponding VLANs.
+  - Example Command: `Switch(config-if)# switchport access vlan 10`.
+- **Verify VLAN Configuration:**
+  - Use `show vlan brief` to verify VLANs are correctly configured.
+
+#### **Step 5: Configure Inter-VLAN Routing**
+- **Router-on-a-Stick Setup:**
+  - Configure a router to allow communication between VLANs.
+  - Example Commands:
+    - `Router(config)# interface GigabitEthernet0/0.10`
+    - `Router(config-subif)# encapsulation dot1Q 10`
+    - `Router(config-subif)# ip address 192.168.10.1 255.255.255.0`
+- **Test Connectivity:**
+  - Use ping tests between devices in different VLANs to ensure inter-VLAN communication is functioning.
+
+#### **Step 6: Implement ACLs**
+- **Define ACLs:**
+  - Create ACLs to control traffic between VLANs.
+  - Example Command: `Router(config)# access-list 101 permit ip 192.168.10.0 0.0.0.255 any`
+- **Apply ACLs:**
+  - Apply the ACLs to the appropriate router interfaces.
+  - Example Command: `Router(config-if)# ip access-group 101 in`.
+- **Test ACLs:**
+  - Attempt to ping or access resources to ensure ACLs are enforcing the desired security policies.
+
+#### **Step 7: Configure Port Security**
+- **Enable Port Security:**
+  - On each switch port, configure port security to restrict unauthorized devices.
+  - Example Command: `Switch(config-if)# switchport port-security`.
+- **Set Maximum Devices:**
+  - Limit the number of MAC addresses per port.
+  - Example Command: `Switch(config-if)# switchport port-security maximum 2`.
+- **Define Action on Violation:**
+  - Set the action (e.g., shutdown) if a violation occurs.
+  - Example Command: `Switch(config-if)# switchport port-security violation shutdown`.
+- **Test Port Security:**
+  - Connect unauthorized devices to test if port security is functioning correctly.
+
+#### **Step 8: Setup VPN**
+- **Configure Site-to-Site VPN:**
+  - On the router, configure a VPN to securely connect a remote branch to the main network.
+  - Example Commands:
+    - `Router(config)# crypto isakmp policy 10`
+    - `Router(config)# crypto ipsec transform-set MYSET esp-aes esp-sha-hmac`
+    - `Router(config)# crypto map MYMAP 10 ipsec-isakmp`
+- **Test VPN:**
+  - Simulate a remote connection and verify secure communication through the VPN.
+
+### **Phase 3: Testing and Documentation**
+
+#### **Step 9: Testing the Network**
+- **Simulate Attacks:**
+  - Attempt unauthorized access or device connections to test network defenses.
+- **Monitor Network Traffic:**
+  - Use Packet Tracer's simulation mode to observe traffic flow and ensure security measures are effective.
+
+#### **Step 10: Document the Project**
+- **Network Diagram:**
+  - Create a detailed network diagram using Cisco Packet Tracer or a diagramming tool like Lucidchart.
+- **Configuration Files:**
+  - Save and export all device configurations from Packet Tracer.
+- **Project Report:**
+  - Include the following sections in your documentation:
+    1. **Project Overview:** Brief description of the project, objectives, and scope.
+    2. **Network Topology:** Include a screenshot or diagram of the network topology.
+    3. **VLAN Configuration:** List VLANs, associated devices, and configurations.
+    4. **ACLs:** Document the ACLs implemented, their purpose, and where they are applied.
+    5. **Port Security:** Explain the port security setup and how it was tested.
+    6. **VPN Configuration:** Describe the VPN setup and how it secures remote access.
+    7. **Testing Results:** Summarize the testing phase, including any simulated attacks and their outcomes.
+    8. **Conclusion:** Reflect on the project’s success, challenges faced, and potential improvements.
+
+### **Phase 4: Finalizing and Sharing**
+
+#### **Step 11: Export and Share**
+- **Save Project:**
+  - Save the Cisco Packet Tracer project file.
+- **Upload to GitHub:**
+  - Create a new repository on GitHub.
+  - Upload the Packet Tracer file, configuration files, network diagram, and project report.
+  - Include a `README.md` with a brief overview, instructions on how to open the project, and key features.
+  
+#### **Step 12: Update Your CV**
+- **Add the Project to Your CV:**
+  - Update your CV with the project details, including a link to the GitHub repository.
+  
+Example:
+
+**Project Title:** Secure Corporate Network Design  
+**Description:** Designed a secure corporate network using Cisco Packet Tracer, implementing VLANs, ACLs, port security, and VPNs to protect against unauthorized access and ensure data integrity.  
+**GitHub Link:** [Secure Corporate Network Design](your_github_link)
+
+### **Conclusion**
+By following these steps, you'll create a robust and secure corporate network using Cisco Packet Tracer, thoroughly documented and ready to showcase in your GitHub and CV.
